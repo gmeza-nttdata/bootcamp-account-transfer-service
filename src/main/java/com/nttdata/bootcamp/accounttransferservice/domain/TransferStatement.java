@@ -16,6 +16,7 @@ public class TransferStatement {
     private BigDecimal amount;
     private String info;
     private LocalDateTime dateTime;
+    private BigDecimal fee;
 
     public static TransferStatement doTransfer(Account source, Account target, BigDecimal amount)
         throws IllegalArgumentException

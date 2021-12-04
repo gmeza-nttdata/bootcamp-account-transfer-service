@@ -31,10 +31,17 @@ public class AccountTransferController {
                 );
     }
 
-    @GetMapping(value = "/{source}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Mono<ResponseEntity<Flux<TransferStatement>>> getStatements(@PathVariable String source) {
+    @GetMapping(value = "statements/{source}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<ResponseEntity<Flux<TransferStatement>>> getStatementsBySource(@PathVariable String source) {
         return Mono.just(
                 ResponseEntity.ok(operations.getTransfersByNumber(source))
+        );
+    }
+
+    @GetMapping(value = "statements", produces = MediaType.APPLICATION_JSON_VALUE)
+    public Mono<ResponseEntity<Flux<TransferStatement>>> getStatements() {
+        return Mono.just(
+                ResponseEntity.ok(operations.getAllTransferStatement())
         );
     }
 

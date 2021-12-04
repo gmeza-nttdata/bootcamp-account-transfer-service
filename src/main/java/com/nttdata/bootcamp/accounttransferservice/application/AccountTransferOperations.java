@@ -11,4 +11,6 @@ public interface AccountTransferOperations {
     Mono<TransferStatement> transfer(String source, String target, BigDecimal amount);
     Flux<TransferStatement> getTransfersByNumber(String number);
 
+    Flux<TransferStatement> getAllTransferStatement();
+
 }

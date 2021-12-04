@@ -47,6 +47,11 @@ public class AccountTransferOperationsImpl implements AccountTransferOperations 
                 .filter(statement -> this.filterStatementById(statement, number));
     }
 
+    @Override
+    public Flux<TransferStatement> getAllTransferStatement() {
+        return statementRepository.queryAll();
+    }
+
     private Boolean filterStatementById(TransferStatement statement, String number) {
         return statement.getSourceNumber().equals(number);
     }

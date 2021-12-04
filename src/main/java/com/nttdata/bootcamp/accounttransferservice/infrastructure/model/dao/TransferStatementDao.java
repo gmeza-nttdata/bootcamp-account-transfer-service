@@ -12,6 +12,7 @@ public class TransferStatementDao {
     private String targetNumber;
     private BigDecimal amount;
     private LocalDateTime dateTime;
+    private BigDecimal fee;
 
 
 }
