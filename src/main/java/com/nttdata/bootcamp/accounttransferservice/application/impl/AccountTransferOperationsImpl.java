@@ -53,7 +53,7 @@ public class AccountTransferOperationsImpl implements AccountTransferOperations 
     }
 
     private Boolean filterStatementById(TransferStatement statement, String number) {
-        return statement.getSourceNumber().equals(number);
+        return statement.getSourceNumber().equals(number) || statement.getTargetNumber().equals(number);
     }
 
 }
